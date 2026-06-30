@@ -1,0 +1,44 @@
+import { Router, type IRouter } from "express";
+import healthRouter from "./health";
+import authRouter from "./auth";
+import adminSessionsRouter from "./admin/sessions";
+import adminSmsProvidersRouter from "./admin/providers";
+import adminPaymentProvidersRouter from "./admin/payment-providers";
+import adminServicesConfigRouter from "./admin/services-config";
+import adminEmailConfigRouter from "./admin/email-config";
+import adminPaymentLogsRouter from "./admin/payment-logs";
+import adminAnalyticsRouter from "./admin/analytics";
+import adminAuditLogsRouter from "./admin/audit-logs";
+import adminUsersRouter from "./admin/users";
+import adminSupportRouter from "./admin/support";
+import paymentProvidersRouter from "./payment-providers";
+import servicesConfigRouter from "./services-config";
+import paymentsRouter from "./payments";
+import webhooksRouter from "./webhooks";
+import supportRouter from "./support";
+import ratingsRouter from "./ratings";
+import securityRouter from "./security";
+
+const router: IRouter = Router();
+
+router.use(healthRouter);
+router.use("/auth", authRouter);
+router.use("/admin/sessions", adminSessionsRouter);
+router.use("/admin/sms-providers", adminSmsProvidersRouter);
+router.use("/admin/payment-providers", adminPaymentProvidersRouter);
+router.use("/admin/services-config", adminServicesConfigRouter);
+router.use("/admin/email-config", adminEmailConfigRouter);
+router.use("/admin/payment-logs", adminPaymentLogsRouter);
+router.use("/admin/analytics", adminAnalyticsRouter);
+router.use("/admin/audit-logs", adminAuditLogsRouter);
+router.use("/admin/users", adminUsersRouter);
+router.use("/admin/support", adminSupportRouter);
+router.use("/payment-providers", paymentProvidersRouter);
+router.use("/services-config", servicesConfigRouter);
+router.use("/payments", paymentsRouter);
+router.use("/webhooks", webhooksRouter);
+router.use("/support", supportRouter);
+router.use("/ratings", ratingsRouter);
+router.use("/security", securityRouter);
+
+export default router;
